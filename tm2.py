@@ -67,9 +67,9 @@ def mark_answer(studentResponse, staffAnswer):
             Follow these grading rules strictly:  
 
             1. Grade on a scale of 0 to 10.  
-            2. If the student's response is at least 80 percent similar to the staff answer, give full marks (10/10).  
+            2. If the student's response is at least 99 percent similar to the staff answer, give full marks (10/10).  
             3. If the response is only partially correct, reduce marks accordingly.  
-            4. If the response is completely incorrect or unrelated, give 2/10.  
+            4. If the response is completely incorrect or unrelated, give 0/10.  
             5. Always explain your score** in 10 words or less.  
             6. If there is no response, give 0/10.
 
@@ -84,7 +84,7 @@ def mark_answer(studentResponse, staffAnswer):
                 system_instruction=f"""
                 the answer to the question the student is been asked is: {staffAnswer}
 
-                You are a lenient grader marking a student's response using the following staff instruction.
+                You are a strict grader marking a student's response using the following staff instruction.
                 staff instruction: {staffInstruction}
                 """
             )
