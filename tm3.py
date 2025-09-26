@@ -9,13 +9,18 @@ import re
 from flask_socketio import SocketIO
 import time
 import threading
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
 socketio = SocketIO(app, debug=True, async_mode='eventlet', cors_allowed_origins="*")
 
 # Initialize Gemini Client (Replace with your actual API Key)
-API_KEY = "AIzaSyB08vDyFoEZ5g6i4OTzNM0W-C4A1UbO2qU"
+API_KEY = os.getenv("GOOGLE_API_KEY")
+
 client = genai.Client(api_key=API_KEY)
 
 def extract_json(text):

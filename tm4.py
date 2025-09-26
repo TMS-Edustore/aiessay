@@ -7,12 +7,16 @@ from google.genai import types
 import json
 import pandas as pd
 from io import BytesIO
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
 
 # Initialize Gemini Client (Replace with your actual API Key)
-API_KEY = "AIzaSyB08vDyFoEZ5g6i4OTzNM0W-C4A1UbO2qU"
+API_KEY = os.getenv("GOOGLE_API_KEY")
 client = genai.Client(api_key=API_KEY)
 
 # Reference answer by staff
