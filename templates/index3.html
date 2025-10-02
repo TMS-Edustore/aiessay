@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory Marker</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Student Answer Grading</h1>
+    
+    <form id="uploadForm" action="/readfile" method="post" enctype="multipart/form-data">
+        <label for="file">Upload Student Response data:</label><br>
+        <input type="file" name="file" accept=".xlsx"> 
+        <button type="submit">Upload</button>
+    </form>
+
+
+</body>
+</html>
